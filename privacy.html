@@ -123,7 +123,7 @@
     </ul>
     <p>Supabase stores these for us in its Mumbai region.</p>
     <p>While you dictate, your audio and text pass through the Butterfly Labs relay, which runs on Cloudflare, to Sarvam AI for transcription and formatting. <b>Butterfly Labs does not store your audio or your text.</b> Sarvam AI processes them under its own terms.</p>
-    <p>To enforce the allowance, the relay also keeps your Supabase user id and this week's usage (words, formatting requests and seconds of audio) in Cloudflare's storage. When a week ends, its word count stays there until it has been copied to Supabase.</p>
+    <p>To enforce the allowance, the relay also keeps your Supabase user id and this week's usage (words, formatting requests and seconds of audio) in Cloudflare's storage. When a week ends, its word count stays there until it has been copied to Supabase. The relay erases all of this by itself within about a week after you stop using Cloud mode.</p>
 
     <h3>Bring your own key</h3>
     <p>The app sends your audio from your computer straight to Sarvam AI, under your own Sarvam account and key. It does not pass through Butterfly Labs, and we receive nothing.</p>
@@ -147,7 +147,7 @@
   <section aria-labelledby="delete">
     <h2 id="delete">Deleting your account</h2>
     <p>From version 0.1.0 of Speak, <b>Settings → Speech engine → Cloud → Delete my Cloud account</b> deletes your account, your Google profile details and your usage counts, in Supabase and in Cloudflare, at once. Until the week ends (Monday 00:00 UTC), the relay keeps a one-way keyed hash of your e-mail address with that week's usage, so that deleting cannot reset the weekly allowance. Our service providers keep short-lived operational logs; Supabase keeps its authentication logs for about a day.</p>
-    <p>If you can't sign in any more, write to the support address shown on Google's sign-in screen, or open an issue at <a href="https://github.com/Deveshu04/Butterfly-Speak/issues" rel="noopener">github.com/Deveshu04/Butterfly-Speak/issues</a>, and it is deleted within 30 days. Please don't post your e-mail address in the issue; we'll ask for it privately.</p>
+    <p>If you can't sign in any more, write to the support address shown on Google's sign-in screen, or open an issue at <a href="https://github.com/Deveshu04/Butterfly-Speak/issues" rel="noopener">github.com/Deveshu04/Butterfly-Speak/issues</a>, and your account is deleted from Supabase within 30 days. The relay's copy erases itself within about a week of your last use, so nothing is left after that. Please don't post your e-mail address in the issue; we'll ask for it privately.</p>
   </section>
 
   <section aria-labelledby="site">
