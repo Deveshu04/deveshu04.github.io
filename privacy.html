@@ -117,12 +117,13 @@
     <h3>Cloud mode</h3>
     <p>To sign you in and to apply the free weekly allowance, Butterfly Labs keeps:</p>
     <ul>
-      <li>the e-mail address of your Google account;</li>
+      <li>what Google provides when you sign in: your e-mail address, your name, the link to your profile picture and your Google account id;</li>
       <li>a Supabase user id;</li>
       <li>one number per week: how many words you dictated.</li>
     </ul>
     <p>Supabase stores these for us in its Mumbai region.</p>
-    <p>While you dictate, your audio and text pass through the Butterfly Labs relay, which runs on Cloudflare, to Sarvam AI for transcription and formatting. <b>Butterfly Labs does not store your audio or your text.</b> Sarvam AI processes them under its own terms. Cloudflare handles the connection to the relay.</p>
+    <p>While you dictate, your audio and text pass through the Butterfly Labs relay, which runs on Cloudflare, to Sarvam AI for transcription and formatting. <b>Butterfly Labs does not store your audio or your text.</b> Sarvam AI processes them under its own terms.</p>
+    <p>To enforce the allowance, the relay also keeps your Supabase user id and this week's usage (words, formatting requests and seconds of audio) in Cloudflare's storage. When a week ends, its word count stays there until it has been copied to Supabase.</p>
 
     <h3>Bring your own key</h3>
     <p>The app sends your audio from your computer straight to Sarvam AI, under your own Sarvam account and key. It does not pass through Butterfly Labs, and we receive nothing.</p>
@@ -145,7 +146,7 @@
 
   <section aria-labelledby="delete">
     <h2 id="delete">Deleting your account</h2>
-    <p>To delete your Cloud mode account and its weekly word counts, open an issue at <a href="https://github.com/Deveshu04/Butterfly-Speak/issues" rel="noopener">github.com/Deveshu04/Butterfly-Speak/issues</a> or write to the support address shown on Google's sign-in screen. Both the account and its counts are removed within 30 days.</p>
+    <p>To delete your Cloud mode account and its usage, write to the support address shown on Google's sign-in screen, or open an issue at <a href="https://github.com/Deveshu04/Butterfly-Speak/issues" rel="noopener">github.com/Deveshu04/Butterfly-Speak/issues</a>. Please don't post your e-mail address in the issue; we'll ask for it privately. Everything listed under Cloud mode is removed from Supabase and from Cloudflare within 30 days.</p>
   </section>
 
   <section aria-labelledby="site">
