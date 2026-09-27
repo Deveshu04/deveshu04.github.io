@@ -122,18 +122,19 @@
       <li>for each signed-in session, the IP address and the browser or device description it signed in from, and when you signed in;</li>
       <li>one entry per week: how many words you dictated that week, and when it last changed.</li>
     </ul>
-    <p>Supabase stores these for us in its Mumbai region.</p>
+    <p>Supabase stores these in its Mumbai region for as long as you have an account; there is one weekly entry for every week you dictated. If a sign-in is started but not finished, Supabase keeps a temporary sign-in record, which can include a short-lived token from Google; a daily clean-up removes these after a day.</p>
     <p>While you dictate, your audio and text pass through the Butterfly Labs relay, which runs on Cloudflare, to Sarvam AI for transcription and formatting. <b>Butterfly Labs does not store your audio or your text.</b> Sarvam AI processes them under its own terms.</p>
-    <p>To enforce the allowance, the relay also keeps, in Cloudflare's storage, your Supabase user id and your full usage (words, seconds of audio and formatting requests) for the current week and, until its word count has been copied to Supabase, for the previous week. The relay erases this by itself within about a week after the app last contacts the relay for your account.</p>
+    <p>To enforce the allowance, the relay also keeps your Supabase user id and your full usage (words, seconds of audio and formatting requests) for the current week and, until its word count has been copied to Supabase, for the previous week. It keeps them in Cloudflare's storage, in a Cloudflare data centre near where your connection first reaches Cloudflare, which may be outside India. The relay erases this by itself within about a week after the app last contacts the relay for your account.</p>
 
     <h3>Bring your own key</h3>
     <p>The app sends your audio from your computer straight to Sarvam AI, under your own Sarvam account and key. It does not pass through Butterfly Labs, and we receive nothing.</p>
 
     <h3>On-device</h3>
-    <p>Speech is recognised on your computer, and your dictation is not sent anywhere.</p>
+    <p>Speech is recognised on your computer, and AI Polish runs on a small model on your computer. If you have saved a Sarvam key or set up your own AI endpoint, transforms, the voice agent and note actions still send their text there.</p>
 
     <h3>In every mode</h3>
     <ul>
+      <li>If you set up your own AI endpoint, the app sends it what you switch it on for: your audio, for transcription in any mode, and your text, for AI Polish in the cloud modes and for transforms, the voice agent and note actions.</li>
       <li>The app has no analytics and no telemetry.</li>
       <li>Your dictation history and notes are kept on your computer.</li>
       <li>Nothing is sold, and nothing is shared for advertising.</li>
@@ -148,8 +149,8 @@
   <section aria-labelledby="delete">
     <h2 id="delete">Deleting your account</h2>
     <p>In Speak 0.2.0 and later, <b>Settings → Speech engine → Cloud → Delete my Cloud account</b> deletes your account from Supabase, with your Google profile details, your sessions and your weekly entries, and erases the relay's copy of your usage on Cloudflare. For two hours afterwards the relay keeps only a note that the account was deleted, so that it refuses sign-in tokens issued before the deletion. Until the week ends (Monday 00:00 UTC), the relay also keeps a one-way keyed hash of your e-mail address with that week's usage, so that deleting cannot reset the weekly allowance.</p>
-    <p>If you can't sign in any more, write to the support address shown on Google's sign-in screen, and your account is deleted from Supabase within 30 days. The relay's copy erases itself within about a week after the app last contacts the relay for your account.</p>
-    <p>Cloudflare may keep a recovery history of the relay's storage for up to 30 days. Our service providers keep short-lived operational logs; Supabase keeps its authentication logs for about a day.</p>
+    <p>If you can't sign in any more, open an issue at <a href="https://github.com/Deveshu04/Deveshu04.github.io/issues" rel="noopener">github.com/Deveshu04/Deveshu04.github.io/issues</a> and your account is deleted from Supabase within 30 days. The relay's copy erases itself within about a week after the app last contacts the relay for your account.</p>
+    <p>Cloudflare may keep a recovery history of the relay's storage for up to 30 days. Supabase and Cloudflare keep short-lived operational logs; Supabase keeps its authentication logs for about a day. Sarvam AI keeps what its own terms allow.</p>
   </section>
 
   <section aria-labelledby="site">
@@ -167,7 +168,6 @@
   <span>© 2026 Butterfly Labs · Made in India</span>
   <nav class="links" aria-label="Elsewhere">
     <a href="./">Home</a>
-    <a href="https://github.com/Deveshu04/Butterfly-Speak" rel="noopener">Speak source</a>
     <a href="https://github.com/Deveshu04" rel="noopener">GitHub</a>
   </nav>
 </footer>
