@@ -157,7 +157,9 @@
       <li>the keys you saved (a Sarvam key, your own AI endpoint's key) and your Cloud sign-in, in Windows Credential Manager.</li>
     </ul>
     <p>Speak applies the history and correction time limits when it starts and every hour while it runs.</p>
+    <p>The app's web view (Microsoft Edge WebView2) also keeps files of its own on your computer, which the history settings and Clear all history do not reach. Speak 0.1.0 kept the text of your latest 200 dictations in the web view's storage; 0.2.0 takes it out of there when it first starts, but older copies of it can stay in those files. If you used the Scratchpad page, which early builds had, Speak keeps a copy of its notes there after moving them to Notes, and deleting a note does not remove that copy. If the web view crashes, WebView2 can keep a crash report that holds text from Speak's pages.</p>
     <p>In Speak 0.2.0 and later, ticking <b>Delete the application data</b> when you uninstall removes all of this except the notes folder you chose and anything reached through a link, such as a models folder you moved to another drive with a junction. A folder holding something the uninstaller cannot check safely is kept, and the uninstaller's details list says so. Without the tick, everything stays. Uninstalling does not sign you out of Cloud mode on Supabase's side, so sign out or delete your account first.</p>
+    <p>Windows keeps Speak's <b>Learned</b> notifications, which name the words you corrected, in its notification centre until you clear them there or Windows removes them; undoing a learned correction or uninstalling Speak does not remove them.</p>
   </section>
 
   <section aria-labelledby="google">
