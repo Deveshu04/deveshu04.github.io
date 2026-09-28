@@ -141,9 +141,23 @@
       <li>In Speak 0.2.0 and later, switching away from Cloud keeps you signed in on this computer without contacting Supabase; to sign out, select Cloud and choose Sign out.</li>
       <li>Speak types by briefly placing the text on the clipboard and then puts back the text that was there; anything else on the clipboard, such as an image, is replaced by the dictation. Putting it back can be turned off only in the settings file (by editing it or importing one), and then the dictation stays on the clipboard. In Speak 0.2.0 and later, what Speak places there for typing is marked so that Windows clipboard history and sync skip it; Copy last transcript, the raw transcript Undo AI Edit copies when it cannot undo in place, and the app's Copy buttons are ordinary copies. Transforms, the voice agent and Undo AI Edit read a selection by pressing Ctrl+C in the app you are using; that copy is not marked, so if Windows clipboard history or sync is on, Windows may keep or sync it.</li>
       <li>The app has no analytics and no telemetry.</li>
-      <li>Your dictation history and notes are kept on your computer.</li>
       <li>Nothing is sold, and nothing is shared for advertising.</li>
     </ul>
+
+    <h3>On your computer</h3>
+    <p>In Speak 0.2.0 and later, the app keeps these on your computer:</p>
+    <ul>
+      <li>your settings, including your Dictionary, your snippets and the corrections Speak has learned;</li>
+      <li>your dictation history, for as long as <b>Settings → System</b> says; with history turned off, new dictations are not added to it, and the History page deletes one dictation or all of them;</li>
+      <li>while Speak is learning from your corrections, the words you corrected, each until 30 days after you last corrected it, whatever the history settings;</li>
+      <li>your notes, and a Markdown copy of each in the folder you chose, if you turned that on;</li>
+      <li>the counts behind Insights (such as words and dictations per day, and words per app), which hold no dictation text and stay whether history is on or off;</li>
+      <li>the speech and AI Polish models you downloaded;</li>
+      <li>logs of what the app did, which hold no dictation text; Speak deletes logs older than a week when it starts;</li>
+      <li>the keys you saved (a Sarvam key, your own AI endpoint's key) and your Cloud sign-in, in Windows Credential Manager.</li>
+    </ul>
+    <p>Speak applies the history and correction time limits when it starts and every hour while it runs.</p>
+    <p>In Speak 0.2.0 and later, ticking <b>Delete the application data</b> when you uninstall removes all of this except the notes folder you chose and anything reached through a link, such as a models folder you moved to another drive with a junction. A folder holding something the uninstaller cannot check safely is kept, and the uninstaller's details list says so. Without the tick, everything stays. Uninstalling does not sign you out of Cloud mode on Supabase's side, so sign out or delete your account first.</p>
   </section>
 
   <section aria-labelledby="google">
