@@ -146,6 +146,9 @@
   .plate .facts li{position:relative;padding-left:16px;font-size:15px;color:var(--ink-2);line-height:1.45}
   .plate .facts li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--acc)}
   .plate .meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:20px}
+  .plate .meta a.lbl{color:var(--acc);text-decoration:none;border-bottom:1px solid currentColor;transition:color .25s}
+  .plate .meta a.lbl:hover{color:var(--ink)}
+  .plate .meta a.lbl:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
   .plate.r{--acc:var(--record)} .plate.s{--acc:var(--speak)} .plate.c{--acc:var(--code)} .plate.m{--acc:var(--meet)} .plate.sc{--acc:var(--sciences)}
   .plate:nth-child(even) .vis{order:2}
 
@@ -323,7 +326,7 @@
             <li>Autonomous loops that gate every task and commit on green</li>
             <li>Any provider, including the ones running on your own hardware</li>
           </ul>
-          <div class="meta"><span class="lbl">Terminal</span><span class="lbl">Resume after a crash for zero tokens</span><span class="lbl">Bring your own model</span></div>
+          <div class="meta"><span class="lbl">Terminal</span><span class="lbl">Resume after a crash for zero tokens</span><span class="lbl">Bring your own model</span><a class="lbl" href="https://github.com/Deveshu04/Butterfly-Code-CLI" rel="noopener">Source on GitHub</a></div>
         </div>
       </article>
 
@@ -367,6 +370,7 @@
   <nav class="links" aria-label="Elsewhere">
     <a href="privacy.html">Privacy</a>
     <a href="https://github.com/Deveshu04" rel="noopener">GitHub</a>
+    <a href="https://github.com/Deveshu04/Butterfly-Code-CLI" rel="noopener">Code, on GitHub</a>
     <a href="https://butterfly-sciences-web.vercel.app" rel="noopener">Sciences, live</a>
     <a href="#top">Back to top</a>
   </nav>
